@@ -1,7 +1,5 @@
 # VS Code Productivity Guide: Top 10 Shortcuts
 
-## How Keyboard Shortcuts Improve Productivity
-
 Keyboard shortcuts are essential for maximizing productivity in VS Code because they:
 
 1. **Reduce Context Switching**: Keep your hands on the keyboard instead of reaching for the mouse
