@@ -181,4 +181,32 @@ Create Branch → Develop → Test → Review → Merge → Delete Branch
 
 ---
 
-*Git's staging and branching concepts are essential for modern software development, enabling teams to collaborate effectively while maintaining code quality and stability.*
+Git Command Reflections
+1. git checkout main -- <file>
+What it does: Restores a specific file from the main branch to your current working directory, without affecting other files.
+
+When to use: Ideal when you want to discard changes to a single file and revert it to its version in main — helpful when experimenting or fixing mistakes without resetting everything.
+
+Observation: I was surprised how precise this command is — it gives fine control without touching unrelated changes.
+
+2. git cherry-pick <commit>
+What it does: Applies a specific commit from another branch to your current branch.
+
+When to use: Useful when you want to bring over a particular fix or feature from a branch without merging the entire branch. Especially helpful in bug fixes that need to go to multiple branches.
+
+Observation: I found it powerful for selective commits — but also realized it can cause conflicts if not handled carefully.
+
+3. git log
+What it does: Displays the commit history in chronological order, showing commit hashes, authors, and messages.
+
+When to use: Essential for understanding project history, tracing bugs, or finding specific changes.
+
+Observation: I appreciated how detailed it is — especially with flags like --oneline or --graph, which made it easier to follow branches and merges.
+
+4. git blame <file>
+What it does: Shows line-by-line history of changes in a file, identifying who last modified each line and when.
+
+When to use: Extremely useful for tracking down the origin of bugs or understanding why a line of code was written a certain way.
+
+Observation: It felt a bit like digital archaeology — insightful for debugging and reviewing collaborative work.
+
