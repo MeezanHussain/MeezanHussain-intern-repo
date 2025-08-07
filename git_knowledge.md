@@ -29,11 +29,6 @@ I chose to use **Git directly within VS Code** as my primary Git client because:
 4. **Extension Support**: Enhanced Git functionality with extensions like GitLens
 5. **Familiar Environment**: Already using VS Code for development
 
-#### Additional Tools Used:
-- **GitHub Desktop**: For complex repository management and visual history
-- **Command Line Git**: For advanced operations and scripting
-- **GitHub Web Interface**: For repository management and collaboration
-
 ## Git Knowledge & Best Practices
 
 ### Core Git Concepts I've Mastered:
@@ -72,11 +67,6 @@ I chose to use **Git directly within VS Code** as my primary Git client because:
 - Custom shortcuts for common operations
 - Workflow optimization through aliases
 - Team-specific command shortcuts
-
-#### 3. **Git Submodules**
-- Managing dependencies in large projects
-- External library integration
-- Multi-repository project management
 
 ## Most Interesting Git Learning
 
@@ -134,19 +124,6 @@ Implementing pre-commit hooks for automatic code formatting and linting has impr
    - `feature/weather-api-integration`
    - `bugfix/login-validation`
    - `hotfix/security-patch`
-
-## Git Tools and Extensions
-
-### Essential Git Extensions:
-- **GitLens**: Enhanced Git capabilities in VS Code
-- **Git History**: Visual commit history
-- **Git Graph**: Branch visualization
-- **GitHub Pull Requests**: Integrated PR management
-
-### Command Line Tools:
-- **Git Bash**: Enhanced terminal experience
-- **Git Credential Manager**: Secure credential storage
-- **Git Flow**: Standardized branching model
 
 ## Future Git Learning Goals
 
