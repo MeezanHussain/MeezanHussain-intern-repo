@@ -315,4 +315,41 @@ I tested three commit message approaches in my repo:
 
 **Code Reviews**: Reviewers can focus on the actual changes instead of guessing what the commit was supposed to do.
 
+---
+
+## Pull Requests: Team Collaboration Workflow
+
+### What Are Pull Requests?
+
+Pull Requests (PRs) are GitHub's way of proposing changes to a repository. They're like saying "Hey team, I made some changes - can you review and merge them?"
+
+### Why PRs Matter in Team Workflow
+
+**Code Review**: PRs force code review before merging. No more "oops, I broke main" moments.
+
+**Knowledge Sharing**: Team members see what others are working on and learn from the code.
+
+**Quality Control**: Multiple eyes catch bugs, suggest improvements, and ensure standards.
+
+**Documentation**: PR descriptions explain WHY changes were made, creating project history.
+
+### My PR Experience
+
+I created a new branch, made changes, and opened a PR on GitHub. The process felt like submitting homework for review - nerve-wracking but necessary for growth.
+
+**What I Learned from Open Source PRs:**
+- Good PRs have clear titles like "feat: add user authentication" not "stuff"
+- Descriptions should explain the problem solved, not just list changes
+- Responding to feedback professionally is crucial
+- Small, focused PRs get approved faster than massive changes
+
+**Key PR Best Practices:**
+- Keep changes small and focused
+- Write clear titles and descriptions
+- Link to related issues
+- Respond to review comments promptly
+- Test your changes before submitting
+
+PRs turn solo coding into team collaboration. They're the safety net that prevents bad code from reaching production.
+
 
