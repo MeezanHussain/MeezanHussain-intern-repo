@@ -54,3 +54,32 @@ function countOccurrences(array, value1, value2) {
 - Easy to understand purpose
 - Simple to modify and debug
 
+---
+
+## Code Formatting & Linting
+
+### Why Code Formatting Matters
+
+**Team Consistency**: When everyone follows the same style, code looks uniform across the project. No more "whose code is this?" moments.
+
+**Readability**: Proper spacing, indentation, and line breaks make code easier to scan and understand.
+
+**Professional Appearance**: Well-formatted code looks polished and shows attention to detail.
+
+### My Experience with ESLint & Prettier
+
+After installing and configuring these tools, I ran them on my codebase:
+
+**What the Linter Found:**
+- Missing semicolons
+- Unused variables
+- Inconsistent spacing
+- Trailing whitespace
+
+**After Formatting:**
+- Code became instantly more readable
+- Consistent indentation throughout
+- Professional appearance
+- Easier to spot actual logic issues
+
+
