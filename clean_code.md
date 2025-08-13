@@ -82,4 +82,76 @@ After installing and configuring these tools, I ran them on my codebase:
 - Professional appearance
 - Easier to spot actual logic issues
 
+---
+
+## Function Refactoring: Single-Purpose Functions
+
+### Why Break Down Functions?
+
+**Single Responsibility**: Each function should do one thing well. When a function tries to do everything, it becomes hard to understand, test, and maintain.
+
+**Easier Testing**: Small functions are easier to test in isolation. You can test each piece of logic separately.
+
+**Reusability**: Small functions can be reused in different contexts, reducing code duplication.
+
+### Before & After Example
+
+**Before (Complex Function):**
+```javascript
+function processUserData(userData) {
+    let result = [];
+    for (let i = 0; i < userData.length; i++) {
+        if (userData[i].age >= 18) {
+            let name = userData[i].name.toUpperCase();
+            let email = userData[i].email.toLowerCase();
+            let status = userData[i].active ? 'ACTIVE' : 'INACTIVE';
+            result.push({ name, email, status, age: userData[i].age });
+        }
+    }
+    return result;
+}
+```
+
+**After (Refactored):**
+```javascript
+function isAdult(user) {
+    return user.age >= 18;
+}
+
+function formatUserName(user) {
+    return user.name.toUpperCase();
+}
+
+function formatUserEmail(user) {
+    return user.email.toLowerCase();
+}
+
+function getUserStatus(user) {
+    return user.active ? 'ACTIVE' : 'INACTIVE';
+}
+
+function processUserData(userData) {
+    return userData
+        .filter(isAdult)
+        .map(user => ({
+            name: formatUserName(user),
+            email: formatUserEmail(user),
+            status: getUserStatus(user),
+            age: user.age
+        }));
+}
+```
+
+### Benefits of Refactoring
+
+**Readability**: Each function has a clear purpose that's easy to understand at a glance.
+
+**Maintainability**: Changes to name formatting only affect one function, not the entire logic.
+
+**Testability**: You can test `isAdult`, `formatUserName`, etc., independently.
+
+**Reusability**: `isAdult` could be used in other parts of your application.
+
+Breaking down complex functions turns spaghetti code into a clean, modular structure that's easier to work with.
+
 
