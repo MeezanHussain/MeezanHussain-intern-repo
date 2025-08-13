@@ -210,3 +210,40 @@ When to use: Extremely useful for tracking down the origin of bugs or understand
 
 Observation: It felt a bit like digital archaeology — insightful for debugging and reviewing collaborative work.
 
+---
+
+## Merge Conflicts: Understanding and Resolving
+
+### What Causes Merge Conflicts?
+
+Merge conflicts occur when Git cannot automatically merge changes because:
+
+1. **Same Lines Modified**: Two branches modify the same lines in the same file
+2. **File Deletion Conflicts**: One branch deletes a file while another modifies it
+3. **Divergent Histories**: Branches have diverged significantly from a common ancestor
+4. **Binary File Conflicts**: Changes to binary files that Git can't merge automatically
+
+### My Experience with Merge Conflicts
+
+I recently created a merge conflict in my test repository to understand the process firsthand. Here's what happened:
+
+**What Caused the Conflict:**
+I created a feature branch and edited a README file, then switched back to main and made conflicting edits to the same lines. When I tried to merge the feature branch back into main, Git couldn't automatically resolve the differences.
+
+**How I Resolved It:**
+Using my Git desktop client, I could see the conflict markers clearly:
+- `<<<<<<< HEAD` (main branch changes)
+- `=======` (separator)
+- `>>>>>>> feature-branch` (feature branch changes)
+
+I manually chose which changes to keep, combining the best parts of both versions, then staged and committed the resolved file.
+
+**What I Learned:**
+- Merge conflicts aren't scary - they're just Git asking for human input
+- Desktop clients make conflict resolution much more visual and intuitive
+- Good communication with teammates can prevent most conflicts
+- It's better to merge frequently to avoid complex conflicts
+- Always test your code after resolving conflicts
+
+The experience taught me that merge conflicts are a normal part of collaborative development, and having the right tools and understanding makes them manageable rather than intimidating.
+
