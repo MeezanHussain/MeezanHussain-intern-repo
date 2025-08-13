@@ -281,10 +281,38 @@ Git automatically checked out commits in the middle of my range. For each commit
 **What I Learned:**
 - Git bisect is incredibly efficient - it finds bugs in logarithmic time instead of linear time
 - It's perfect for when you know something broke "recently" but aren't sure exactly when
-- The process feels like playing a game of "hot and cold" with Git
 - It's much faster than manually checking each commit one by one
 - The tool does the heavy lifting - you just need to test and mark commits as good/bad
 
 
 Git bisect transformed what could have been hours of manual debugging into a quick, systematic process. It's like having a debugging assistant that knows exactly where to look.
+
+---
+
+## Commit Message Best Practices
+
+### What Makes a Good Commit Message?
+
+After researching open-source projects like React and Node.js, I discovered the key elements:
+
+- **Clear Subject Line**: 50 characters or less, starting with a verb
+- **Descriptive Content**: Explains WHAT changed and WHY, not HOW
+- **Conventional Format**: `type(scope): description` (e.g., `feat(auth): add login validation`)
+
+### My Experiment with Different Styles
+
+I tested three commit message approaches in my repo:
+
+1. **Vague**: "fixed stuff" - Terrible! No one knows what changed
+2. **Overly Detailed**: Wrote a novel about every line change - Too much noise
+3. **Well-Structured**: `feat(docs): add git bisect section with examples` - Just right
+
+### Why Good Commit Messages Matter
+
+**Team Collaboration**: Clear messages help teammates understand changes without reading code. When someone asks "why did we change this?" a good commit message answers it.
+
+**Future Debugging**: Poor messages like "fixed stuff" make it impossible to track down when a bug was introduced. Good messages create a searchable project history.
+
+**Code Reviews**: Reviewers can focus on the actual changes instead of guessing what the commit was supposed to do.
+
 
