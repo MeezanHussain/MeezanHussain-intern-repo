@@ -247,3 +247,44 @@ I manually chose which changes to keep, combining the best parts of both version
 
 The experience taught me that merge conflicts are a normal part of collaborative development, and having the right tools and understanding makes them manageable rather than intimidating.
 
+---
+
+## Git Bisect: Debugging with Binary Search
+
+### What Does Git Bisect Do?
+
+Git bisect is a powerful debugging tool that uses binary search to find the exact commit that introduced a bug. It works by:
+
+1. **Marking Good and Bad Commits**: You tell Git which commit is known to work (good) and which has the bug (bad)
+2. **Binary Search**: Git automatically checks out commits in the middle of the range
+3. **Testing**: You test each commit to determine if it's good or bad
+4. **Narrowing Down**: Git eliminates half the commits with each test, quickly finding the problematic commit
+
+### When Would You Use Git Bisect?
+
+Git bisect is invaluable in real-world debugging situations like:
+- **Regression Bugs**: When a feature that worked yesterday is broken today
+- **Performance Issues**: When code suddenly became slower after a recent change
+- **Build Failures**: When the project stopped compiling after a specific commit
+- **Complex Debugging**: When manual commit review would take too long
+
+### My Experience with Git Bisect
+
+I recently experimented with git bisect in my test repository to understand how it works:
+
+**The Test Scenario:**
+I created a series of commits with a simple script, then intentionally introduced a syntax error in one commit. Starting from the latest (broken) commit, I used `git bisect start` and marked the current commit as bad, then went back several commits to find a working version and marked it as good.
+
+**How It Worked:**
+Git automatically checked out commits in the middle of my range. For each commit, I ran the script to see if it worked or failed. With each test, Git eliminated half the remaining commits. In just a few iterations, it pinpointed the exact commit where I introduced the bug.
+
+**What I Learned:**
+- Git bisect is incredibly efficient - it finds bugs in logarithmic time instead of linear time
+- It's perfect for when you know something broke "recently" but aren't sure exactly when
+- The process feels like playing a game of "hot and cold" with Git
+- It's much faster than manually checking each commit one by one
+- The tool does the heavy lifting - you just need to test and mark commits as good/bad
+
+
+Git bisect transformed what could have been hours of manual debugging into a quick, systematic process. It's like having a debugging assistant that knows exactly where to look.
+
