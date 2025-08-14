@@ -237,3 +237,176 @@ function getActiveUsers(userData) {
 **Reduced Cognitive Load**: No need to trace through code to understand variable purpose.
 **Easier Debugging**: Clear names make it obvious where issues might be.
 **Better Collaboration**: Team members can work with your code without confusion.
+
+---
+
+## The DRY Principle: Don't Repeat Yourself
+
+### What is DRY?
+
+**DRY (Don't Repeat Yourself)** is a software development principle that states: "Every piece of knowledge or logic must have a single, unambiguous representation within a system."
+
+**Why DRY Matters:**
+- **Eliminates Duplication**: No more copy-pasting the same logic
+- **Single Source of Truth**: Changes only need to be made in one place
+- **Easier Maintenance**: Fix a bug once, it's fixed everywhere
+- **Better Testing**: Test logic once, not multiple times
+
+### Example of Code Duplication (Before DRY)
+
+```javascript
+// User validation functions - lots of repetition!
+function validateUserRegistration(userData) {
+    let errors = [];
+    
+    if (!userData.firstName || userData.firstName.trim() === '') {
+        errors.push('First name is required');
+    }
+    if (!userData.lastName || userData.lastName.trim() === '') {
+        errors.push('Last name is required');
+    }
+    if (!userData.email || userData.email.trim() === '') {
+        errors.push('Email is required');
+    }
+    if (userData.email && !userData.email.includes('@')) {
+        errors.push('Email must contain @ symbol');
+    }
+    if (!userData.password || userData.password.length < 8) {
+        errors.push('Password must be at least 8 characters');
+    }
+    
+    return errors;
+}
+
+function validateUserProfile(userData) {
+    let errors = [];
+    
+    if (!userData.firstName || userData.firstName.trim() === '') {
+        errors.push('First name is required');
+    }
+    if (!userData.lastName || userData.lastName.trim() === '') {
+        errors.push('Last name is required');
+    }
+    if (!userData.email || userData.email.trim() === '') {
+        errors.push('Email is required');
+    }
+    if (userData.email && !userData.email.includes('@')) {
+        errors.push('Email must contain @ symbol');
+    }
+    
+    return errors;
+}
+
+function validateUserLogin(userData) {
+    let errors = [];
+    
+    if (!userData.email || userData.email.trim() === '') {
+        errors.push('Email is required');
+    }
+    if (userData.email && !userData.email.includes('@')) {
+        errors.push('Email must contain @ symbol');
+    }
+    if (!userData.password || userData.password.length < 8) {
+        errors.push('Password must be at least 8 characters');
+    }
+    
+    return errors;
+}
+```
+
+**Problems with this code:**
+- **Duplicated Logic**: Same validation rules repeated 3 times
+- **Maintenance Nightmare**: Change a rule, update 3 places
+- **Bug Risk**: Fix a bug in one place, forget the others
+- **Inconsistent Behavior**: Rules might diverge over time
+
+### After Refactoring (DRY Principle Applied)
+
+```javascript
+// Single validation functions - no duplication!
+function isRequired(value) {
+    return value && value.trim() !== '';
+}
+
+function isValidEmail(email) {
+    return email && email.includes('@');
+}
+
+function isValidPassword(password) {
+    return password && password.length >= 8;
+}
+
+function validateField(value, fieldName, validators) {
+    let errors = [];
+    
+    validators.forEach(validator => {
+        if (!validator.isValid(value)) {
+            errors.push(validator.message);
+        }
+    });
+    
+    return errors;
+}
+
+// Validation rules configuration
+const validationRules = {
+    firstName: [
+        { isValid: isRequired, message: 'First name is required' }
+    ],
+    lastName: [
+        { isValid: isRequired, message: 'Last name is required' }
+    ],
+    email: [
+        { isValid: isRequired, message: 'Email is required' },
+        { isValid: isValidEmail, message: 'Email must contain @ symbol' }
+    ],
+    password: [
+        { isValid: isRequired, message: 'Password is required' },
+        { isValid: isValidPassword, message: 'Password must be at least 8 characters' }
+    ]
+};
+
+function validateUserData(userData, requiredFields) {
+    let errors = [];
+    
+    requiredFields.forEach(field => {
+        if (validationRules[field]) {
+            const fieldErrors = validateField(userData[field], field, validationRules[field]);
+            errors.push(...fieldErrors);
+        }
+    });
+    
+    return errors;
+}
+
+// Specific validation functions using the common logic
+function validateUserRegistration(userData) {
+    return validateUserData(userData, ['firstName', 'lastName', 'email', 'password']);
+}
+
+function validateUserProfile(userData) {
+    return validateUserData(userData, ['firstName', 'lastName', 'email']);
+}
+
+function validateUserLogin(userData) {
+    return validateUserData(userData, ['email', 'password']);
+}
+```
+
+### What Were the Issues with Duplicated Code?
+
+**Maintenance Nightmare**: Changing a validation rule required updating multiple functions.
+**Bug Multiplication**: A bug in validation logic appeared in multiple places.
+**Inconsistent Behavior**: Different validation functions could have different rules over time.
+**Code Bloat**: Unnecessary repetition made the codebase larger and harder to navigate.
+**Testing Complexity**: Had to test the same logic multiple times.
+
+### How Did Refactoring Improve Maintainability?
+
+**Single Source of Truth**: Validation rules are defined once in `validationRules`.
+**Easy Updates**: Change a rule in one place, it updates everywhere.
+**Consistent Behavior**: All validation functions use the same underlying logic.
+**Better Testing**: Test validation logic once, not multiple times.
+**Extensible Design**: Easy to add new validation rules or fields.
+**Cleaner Code**: Each function has a clear, single responsibility.
+
