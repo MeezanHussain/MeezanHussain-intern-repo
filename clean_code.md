@@ -154,4 +154,86 @@ function processUserData(userData) {
 
 Breaking down complex functions turns spaghetti code into a clean, modular structure that's easier to work with.
 
+---
 
+## Variable and Function Naming Best Practices
+
+### What Makes a Good Variable or Function Name?
+
+**Descriptive & Specific**: Names should clearly indicate what the variable stores or what the function does.
+- ✅ `userCount` instead of `c`
+- ✅ `calculateTotalPrice` instead of `calc`
+
+**Self-Documenting**: Code should read like natural language, explaining its purpose without comments.
+- ✅ `isUserLoggedIn` instead of `flag`
+- ✅ `getUserById` instead of `get`
+
+**Consistent Convention**: Follow established patterns (camelCase for variables, PascalCase for classes).
+- ✅ `firstName`, `lastName`, `emailAddress`
+- ✅ `UserProfile`, `OrderManager`
+
+### Examples of Unclear Names (Before Refactoring)
+
+```javascript
+// Poor naming examples
+let x = 0;
+let tmp = [];
+let flag = false;
+let data = {};
+let fn = () => {};
+
+function calc(a, b) {
+    let result = a + b;
+    return result;
+}
+
+function process(d) {
+    let arr = [];
+    for (let i = 0; i < d.length; i++) {
+        if (d[i].active) {
+            arr.push(d[i]);
+        }
+    }
+    return arr;
+}
+```
+
+### After Refactoring for Clarity
+
+```javascript
+// Clear, descriptive names
+let counter = 0;
+let userList = [];
+let isUserActive = false;
+let userProfile = {};
+let handleClick = () => {};
+
+function addNumbers(firstNumber, secondNumber) {
+    let sum = firstNumber + secondNumber;
+    return sum;
+}
+
+function getActiveUsers(userData) {
+    let activeUsers = [];
+    for (let i = 0; i < userData.length; i++) {
+        if (userData[i].active) {
+            activeUsers.push(userData[i]);
+        }
+    }
+    return activeUsers;
+}
+```
+
+### What Issues Can Arise from Poorly Named Variables?
+
+**Debugging Nightmares**: Single-letter variables make it impossible to understand what went wrong.
+**Maintenance Headaches**: Future developers (including yourself) will waste time deciphering code.
+**Bug Introduction**: Misunderstanding variable purpose leads to incorrect logic and bugs.
+**Code Reviews**: Poor naming forces reviewers to ask "what does this do?" instead of focusing on logic.
+
+### How Did Refactoring Improve Code Readability?
+
+**Instant Understanding**: `getActiveUsers` immediately tells you what the function does.
+**Reduced Cognitive Load**: No need to trace through code to understand variable purpose.
+**Easier Debugging**: Clear names make it obvious where issues might be.
+**Better Collaboration**: Team members can work with your code without confusion.
