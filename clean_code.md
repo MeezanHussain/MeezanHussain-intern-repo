@@ -671,4 +671,196 @@ const processedUsers = processUsers(users);
 **Testing**: Each function can be tested independently with simple inputs/outputs.
 **Flexibility**: Easy to modify the pipeline or add new transformation steps.
 
+---
+
+## Comment and Documentation Best Practices
+
+### When to Add Comments
+
+**Explain the "Why", Not the "What"**: Comments should explain why code exists, not what it does.
+**Complex Business Logic**: Document business rules that aren't obvious from the code.
+**Workarounds**: Explain temporary fixes or platform-specific solutions.
+**API Documentation**: Document public interfaces and expected behaviors.
+**Performance Considerations**: Explain why certain approaches were chosen for performance.
+
+### When to Avoid Comments
+
+**Obvious Code**: Don't comment what the code clearly shows.
+**Outdated Information**: Comments that don't match the current code.
+**Commented-Out Code**: Remove dead code instead of commenting it.
+**Poor Naming**: Fix variable/function names instead of adding explanatory comments.
+
+### Example of Poorly Commented Code (Before Improvement)
+
+```javascript
+// This function does stuff
+function processData(data) {
+    // Initialize variables
+    let result = []; // Array to store results
+    let i = 0; // Counter variable
+    
+    // Loop through data
+    while (i < data.length) { // Check if we have more data
+        // Get current item
+        let item = data[i]; // Current item in the loop
+        
+        // Check if item is valid
+        if (item && item.value > 0) { // Make sure item exists and has positive value
+            // Process the item
+            let processedItem = {
+                id: item.id, // Set the ID
+                value: item.value * 2, // Double the value
+                status: 'processed' // Mark as processed
+            };
+            
+            // Add to results
+            result.push(processedItem); // Push processed item to result array
+        }
+        
+        // Increment counter
+        i++; // Move to next item
+    }
+    
+    // Return the results
+    return result; // Return the processed data
+}
+
+// This is a user object
+class User {
+    constructor(name, email) {
+        this.name = name; // Set the name
+        this.email = email; // Set the email
+        this.createdAt = new Date(); // Set creation date
+    }
+    
+    // Method to get user info
+    getUserInfo() {
+        return {
+            name: this.name, // Return the name
+            email: this.email, // Return the email
+            createdAt: this.createdAt // Return creation date
+        };
+    }
+}
+
+// TODO: Fix this later
+// This function has a bug but we need to ship
+function calculateTotal(items) {
+    let total = 0; // Start with zero
+    
+    // Add up all items
+    for (let i = 0; i < items.length; i++) {
+        total += items[i].price; // Add price to total
+    }
+    
+    return total; // Return the total
+}
+```
+
+**Problems with these comments:**
+- **Obvious explanations**: Comments like "Set the name" add no value
+- **Code duplication**: Comments repeat what the code already shows
+- **Outdated information**: TODO comment suggests technical debt
+- **No business context**: Missing explanation of why certain logic exists
+- **Verbose**: Too many comments clutter the code
+
+### After Improving Comments and Documentation
+
+```javascript
+/**
+ * Processes user data by filtering valid items and doubling their values.
+ * This transformation is required by the business rule that all processed
+ * items must have values that are multiples of 2.
+ * 
+ * @param {Array} data - Array of items with id and value properties
+ * @returns {Array} Array of processed items with doubled values
+ */
+function processData(data) {
+    const result = [];
+    
+    for (let i = 0; i < data.length; i++) {
+        const item = data[i];
+        
+        // Business rule: Only process items with positive values
+        if (item && item.value > 0) {
+            const processedItem = {
+                id: item.id,
+                value: item.value * 2, // Business requirement: double the value
+                status: 'processed'
+            };
+            
+            result.push(processedItem);
+        }
+    }
+    
+    return result;
+}
+
+/**
+ * Represents a user in the system with basic profile information.
+ * Used for authentication and user management operations.
+ */
+class User {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+        this.createdAt = new Date();
+    }
+    
+    /**
+     * Retrieves user information for display or API responses.
+     * Excludes sensitive data like password or internal IDs.
+     * 
+     * @returns {Object} User information object
+     */
+    getUserInfo() {
+        return {
+            name: this.name,
+            email: this.email,
+            createdAt: this.createdAt
+        };
+    }
+}
+
+/**
+ * Calculates the total price of all items in a collection.
+ * 
+ * NOTE: This function currently has a known issue where it doesn't
+ * handle items with undefined or null prices. This will be fixed
+ * in the next release as it affects approximately 0.1% of orders.
+ * 
+ * @param {Array} items - Array of items with price property
+ * @returns {number} Total price of all items
+ */
+function calculateTotal(items) {
+    let total = 0;
+    
+    for (let i = 0; i < items.length; i++) {
+        // TODO: Add null/undefined price handling in v2.1
+        total += items[i].price;
+    }
+    
+    return total;
+}
+```
+
+### When Should You Add Comments?
+
+**Business Logic**: Explain why certain rules exist (e.g., "Business requirement: double the value").
+**Complex Algorithms**: Document the reasoning behind algorithmic choices.
+**API Contracts**: Document expected inputs, outputs, and behaviors.
+**Known Issues**: Explain workarounds or temporary solutions with context.
+**Performance Decisions**: Document why certain approaches were chosen.
+**Domain Knowledge**: Explain industry-specific terms or concepts.
+
+### When Should You Avoid Comments and Instead Improve the Code?
+
+**Obvious Operations**: If the code clearly shows what it does, no comment needed.
+**Poor Naming**: Fix `calc()` to `calculateTotal()` instead of commenting it.
+**Commented Code**: Remove dead code instead of leaving it commented out.
+**Outdated Information**: Update or remove comments that don't match current code.
+**Implementation Details**: Don't comment how, comment why.
+
+**Key Takeaway**: Good comments explain the "why" behind code decisions, while good code explains the "what" through clear naming and structure. Comments should complement self-documenting code, not replace it.
+
 
