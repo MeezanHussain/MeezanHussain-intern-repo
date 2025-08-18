@@ -952,5 +952,100 @@ function calculateDiscount(total, rate) {
 **Robust Applications**: Applications handle edge cases gracefully instead of crashing unexpectedly.
 **Better User Experience**: Users get meaningful error messages instead of silent failures.
 
+---
 
+## Unit Testing with Jest
 
+### Why Unit Testing Matters
+
+**Code Quality**: Tests force you to think about edge cases and error scenarios.
+**Refactoring Safety**: Tests give confidence that changes don't break existing functionality.
+**Documentation**: Tests serve as living examples of how functions should work.
+**Bug Prevention**: Catch issues early before they reach production.
+**Design Improvement**: Writing tests often reveals design flaws in the code.
+
+### My Jest Testing Experience
+
+I chose **Jest** for JavaScript testing and set up a simple FizzBuzz function to practice:
+
+```javascript
+// index.js - Function to test
+function fizz_buzz(numbers) {
+    let result = []
+    
+    for (number of numbers) {
+        if (number % 15 === 0) {
+            result.push('fizzbuzz')
+        } else if (number % 3 === 0) {
+            result.push('fizz')
+        } else if (number % 5 === 0) {
+            result.push('buzz')
+        } else {
+            result.push(number)
+        }
+    }
+    
+    return result.join(', ')
+}
+```
+
+**Initial Tests Written:**
+```javascript
+// index.test.js
+describe("FizzBuzz", () => {
+    test('[3] should result in "fizz"', () => {
+      expect(fizz_buzz([3])).toBe('fizz');
+    });
+
+    test('[5] should result in "buzz"', () => {
+      expect(fizz_buzz([5])).toBe('buzz');
+    });
+
+    test('[15] should result in "fizzbuzz"', () => {
+      expect(fizz_buzz([15])).toBe('fizzbuzz');
+    });
+
+    test('[1,2,3] should result in "1, 2, fizz"', () => {
+      expect(fizz_buzz([3])).toBe('fizz'); // This test has a bug!
+    });
+});
+```
+
+### Issues Found While Testing
+
+**Test Bug**: The last test expects `[1,2,3]` but only tests `[3]` - incomplete test coverage.
+**Missing Edge Cases**: No tests for empty arrays, invalid inputs, or mixed number sequences.
+**Incomplete Logic**: The function doesn't handle edge cases like empty arrays or non-numbers.
+
+**Improved Tests:**
+```javascript
+describe("FizzBuzz", () => {
+    test('Single number divisible by 3', () => {
+        expect(fizz_buzz([3])).toBe('fizz');
+    });
+
+    test('Single number divisible by 5', () => {
+        expect(fizz_buzz([5])).toBe('buzz');
+    });
+
+    test('Single number divisible by 15', () => {
+        expect(fizz_buzz([15])).toBe('fizzbuzz');
+    });
+
+    test('Mixed sequence', () => {
+        expect(fizz_buzz([1, 2, 3, 4, 5, 15])).toBe('1, 2, fizz, 4, buzz, fizzbuzz');
+    });
+
+    test('Empty array', () => {
+        expect(fizz_buzz([])).toBe('');
+    });
+});
+```
+
+### How Do Unit Tests Help Keep Code Clean?
+
+**Forces Good Design**: Tests require functions to be focused and testable.
+**Reveals Complexity**: Complex functions are harder to test, encouraging refactoring.
+**Documents Behavior**: Tests show exactly what the function should do.
+**Prevents Regression**: Changes that break functionality are caught immediately.
+**Improves Naming**: Clear test descriptions encourage better function names.
