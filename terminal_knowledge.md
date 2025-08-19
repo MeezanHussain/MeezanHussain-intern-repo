@@ -1,5 +1,9 @@
 # Terminal Knowledge & Windows PowerShell Experience
 
+> **📸 Screenshot Proof**: 
+> - [PowerShell running Get-Help command](./screenshots/running-command1.png)
+> - [PowerShell running ls and Get-ComputerInfo commands](./screenshots/running-command2.png)
+
 ## Terminal Client Choice
 
 ### Selected Terminal: **Windows PowerShell**
@@ -126,5 +130,22 @@ Get-Command -Module Microsoft.PowerShell.Utility
 ### PowerShell vs Git Bash:
 - **Advantages**: Full Windows integration, system administration
 - **Disadvantages**: Different from Unix-like environments
+
+## Personal Experience: Using Terminal During Onboarding
+
+### Repository Cloning Experience
+During my onboarding process, I had to clone the Focus Bear onboarding repository to get started. This was my first real experience using PowerShell for a practical development task, and it taught me several valuable lessons:
+
+**What I Learned**:
+1. **Git Commands in PowerShell**: I discovered that PowerShell handles git commands seamlessly, and the `git clone` command worked exactly as expected
+2. **Navigation Efficiency**: Using `cd onboarding-frontend-react` to enter the cloned directory was much faster than navigating through Windows Explorer
+3. **Command Verification**: Running `ls` to see the repository contents helped me confirm the clone was successful
+
+**What Surprised Me**: 
+- How intuitive the commands felt once I started using them
+- The speed difference between terminal navigation vs. GUI navigation
+- That PowerShell could handle git operations just as well as specialized git terminals
+
+This experience made me realize that the terminal isn't just for advanced users - it's a practical tool that can speed up everyday development tasks, even for beginners like me.
 
 
