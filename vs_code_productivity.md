@@ -1,5 +1,7 @@
 # VS Code Productivity Guide: Top 10 Shortcuts
 
+> **📸 Screenshot Proof**: [View VS Code with shortcuts file open](./screenshots/vscode-shortcuts.png)
+
 ## How Keyboard Shortcuts Improve Productivity
 
 Keyboard shortcuts are essential for maximizing productivity in VS Code because they:
@@ -69,4 +71,32 @@ Keyboard shortcuts are essential for maximizing productivity in VS Code because 
 - **What it does**: Open/close integrated terminal
 - **Why it's essential**: Access command line without leaving editor
 - **Daily use**: Running scripts, git commands, package management
-* 
+
+## Personal Experience: Terminal Commands in My Assignment Projects
+
+During my assignment projects, I've found that the integrated terminal in VS Code has been incredibly valuable for my daily workflow. Here are the commands I use most frequently:
+
+### **mkdir** - Creating Project Structure
+I regularly use `mkdir` to create new folders for different components or features. For example, when building a React project, I'll quickly create directories like:
+```bash
+mkdir components
+mkdir pages
+mkdir utils
+mkdir assets
+```
+
+### **cd** and **ls** - Navigation and Exploration
+The `cd` command helps me navigate between different project directories, while `ls` gives me a quick overview of what files are in each folder. This is especially useful when working with complex project structures.
+
+### **npm run dev** - Development Workflow
+One of my most-used commands is `npm run dev` to start the development server. This command has saved me countless clicks and time compared to manually navigating to the terminal or using the mouse to run scripts.
+
+### Real-World Time Savings
+Just yesterday, while working on a project, I needed to create a new feature folder and start the dev server. Using the integrated terminal with these commands:
+1. `mkdir new-feature` (2 seconds)
+2. `cd new-feature` (1 second) 
+3. `npm run dev` (2 seconds)
+
+Total time: 5 seconds. If I had used the GUI, it would have taken at least 15-20 seconds with mouse navigation and menu clicking.
+
+The **Ctrl + `** shortcut to toggle the terminal has become second nature to me, and I can't imagine coding without these terminal commands readily available in VS Code. 

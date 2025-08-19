@@ -116,3 +116,4 @@ Code smells are warning signs that should not be ignored. By recognizing and ref
 - More maintainable and extensible
 - Less prone to bugs
 - More enjoyable to work with
+
