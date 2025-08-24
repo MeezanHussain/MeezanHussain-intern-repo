@@ -1,7 +1,6 @@
 # Agile Principles & Frameworks: Learning & Reflection
 *Milestone: Agile at Focus Bear - Module 1*
 
-## 🔍 Research & Learn
 
 ### What is Agile, and how does it differ from traditional project management?
 
@@ -70,7 +69,7 @@ Based on typical startup and product development environments, Focus Bear likely
 5. **Visual Management**: Kanban boards provide clear visibility into work status
 6. **Reduced Overhead**: Fewer mandatory meetings and ceremonies
 
-## 📝 Reflection
+## Reflection
 
 ### What do you think are the biggest benefits and challenges of Agile?
 
@@ -100,7 +99,7 @@ As a team member, Agile principles can enhance my work by:
 - **Quality**: Emphasis on working software over perfect documentation
 - **Sustainability**: Maintaining a sustainable pace prevents burnout
 
-## 🛠️ Task
+## Task
 
 ### Summarize the main differences between Scrum and Kanban in your own words
 
@@ -127,5 +126,3 @@ In my role, maintaining a sustainable pace means:
 - Helping the team recognize when we're overcommitting
 
 ---
-
-*This reflection represents my understanding of Agile principles and how they apply to modern software development teams like Focus Bear. The insights will guide my approach to collaboration, delivery, and continuous improvement in an Agile environment.*
