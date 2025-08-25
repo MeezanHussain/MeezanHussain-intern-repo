@@ -1,7 +1,6 @@
 # Agile Workflows & Kanban: Learning & Reflection
 *Milestone: Agile at Focus Bear - Module 3*
 
-
 ### How does a Kanban board work, and how does it help manage workflow?
 
 **Kanban Board Overview:**
@@ -245,4 +244,3 @@ Implement a more detailed task tracking approach that includes:
 - **Prevention**: Note how similar issues can be avoided in future
 
 ---
-
