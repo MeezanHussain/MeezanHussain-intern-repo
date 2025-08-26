@@ -313,6 +313,8 @@ I tested three commit message approaches in my repo:
 2. **Overly Detailed**: Wrote a novel about every line change - Too much noise
 3. **Well-Structured**: `feat(docs): add git bisect section with examples` - Just right
 
+**Evidence**: Screenshot available in `screenshots/git-commit-messages.png` showing the three different commit message examples in my repository.
+
 ### Why Good Commit Messages Matter
 
 **Team Collaboration**: Clear messages help teammates understand changes without reading code. When someone asks "why did we change this?" a good commit message answers it.
