@@ -196,6 +196,8 @@ When to use: Useful when you want to bring over a particular fix or feature from
 
 Observation: I found it powerful for selective commits — but also realized it can cause conflicts if not handled carefully.
 
+**Evidence**: Screenshot available in `screenshots/git-cherry-pick.png` showing the cherry-pick process in action.
+
 3. git log
 What it does: Displays the commit history in chronological order, showing commit hashes, authors, and messages.
 
@@ -203,12 +205,16 @@ When to use: Essential for understanding project history, tracing bugs, or findi
 
 Observation: I appreciated how detailed it is — especially with flags like --oneline or --graph, which made it easier to follow branches and merges.
 
+**Evidence**: Screenshot available in `screenshots/git-log-run.png` showing the commit history output.
+
 4. git blame <file>
 What it does: Shows line-by-line history of changes in a file, identifying who last modified each line and when.
 
 When to use: Extremely useful for tracking down the origin of bugs or understanding why a line of code was written a certain way.
 
 Observation: It felt a bit like digital archaeology — insightful for debugging and reviewing collaborative work.
+
+**Evidence**: Screenshot available in `screenshots/git-blame-run.png` showing the line-by-line blame output.
 
 ---
 
@@ -351,5 +357,3 @@ I created a new branch, made changes, and opened a PR on GitHub. The process fel
 - Test your changes before submitting
 
 PRs turn solo coding into team collaboration. They're the safety net that prevents bad code from reaching production.
-
-
