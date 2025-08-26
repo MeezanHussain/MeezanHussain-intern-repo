@@ -11,6 +11,7 @@
 - **Use Case**: Code generation, real-time assistance, pair programming
 - **Experience**: Integrated AI directly in the development environment
 - **Features**: Inline code suggestions, chat interface, code explanations
+- **Evidence**: Screenshot available in `screenshots/CursorAI-Usage.png` showing AI in action
 
 ## What Worked Well
 
@@ -41,6 +42,44 @@
 - ❌ **Learning Curve**: Requires time to understand project-specific patterns
 - ❌ **Internet Dependency**: Requires stable connection for AI features
 - ❌ **Privacy Concerns**: Code may be processed by external servers
+
+## Real Debugging Example with AI Assistance
+
+### **Issue**: Code Smells Examples Repository Structure
+**Problem**: When organizing the code smells examples, I needed to create a proper file structure and ensure all examples were properly categorized and documented.
+
+**AI Assistance Used**: Cursor AI for code organization and ChatGPT for best practices research
+
+**Solution Generated**:
+```javascript
+// Example of AI-assisted code organization for code smells
+// Generated with Cursor AI assistance
+
+// Before: Scattered examples without clear structure
+// After: Organized by category with proper documentation
+
+const codeSmellsExamples = {
+  magicNumbers: {
+    file: '01_magic_numbers.js',
+    description: 'Demonstrates magic number anti-pattern',
+    severity: 'medium',
+    fix: 'Extract constants with meaningful names'
+  },
+  longFunctions: {
+    file: '02_long_functions.js',
+    description: 'Shows functions that do too many things',
+    severity: 'high',
+    fix: 'Break into smaller, focused functions'
+  }
+  // ... additional examples
+};
+
+// AI suggested this structure for better maintainability
+```
+
+**Time Saved**: 2-3 hours of manual organization and documentation
+**Quality Improvement**: Consistent structure across all example files
+**Learning Outcome**: Better understanding of code organization patterns
 
 ## When AI is Most Useful for Coding
 
@@ -102,3 +141,5 @@
 - **Workflow Optimization**: Streamline AI tool usage in daily development
 - **Custom Prompts**: Develop project-specific AI assistance patterns
 - **Team Adoption**: Share effective AI usage strategies with team members
+
+---
