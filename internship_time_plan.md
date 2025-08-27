@@ -3,7 +3,7 @@
 
 ## **Internship Overview**
 
-**Duration**: 12 weeks (August 4th - October 31st, 2024)
+**Duration**: 12 weeks (August 4th - October 31, 2024)
 **Total Required Hours**: 140 hours
 **Current Week**: Week 4 (as of September 2024)
 **Remaining Weeks**: 8 weeks
