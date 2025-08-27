@@ -867,6 +867,71 @@ function calculateTotal(items) {
 
 ---
 
+## A Personal Story: The Comment That Saved My Day
+
+### The Incident
+
+During my internship, I was working on a complex data processing function that had been written by a previous developer. The function was about 50 lines long and had no comments whatsoever. I needed to modify it to handle a new business requirement, but I spent nearly 2 hours just trying to understand what it was supposed to do.
+
+### What Happened
+
+The function was called `processUserData()` but it was doing much more than just processing user data. It was:
+- Validating input
+- Transforming data formats
+- Applying business rules
+- Handling edge cases
+- Logging operations
+
+Without any comments explaining the business logic or the "why" behind certain transformations, I had to trace through the code line by line, making educated guesses about the intended behavior.
+
+### The Breaking Point
+
+I finally made my changes and tested them. Everything seemed to work until I deployed to staging, where the function started failing for certain user types. It turned out there was a specific business rule buried in the middle of the function that I had accidentally modified:
+
+```javascript
+// What I thought was just data formatting
+if (user.type === 'premium') {
+    user.discount = user.discount * 1.5; // This was a business rule I didn't know about!
+}
+```
+
+### The Lesson Learned
+
+This experience taught me the importance of **contextual comments**. A simple comment like this would have saved me hours:
+
+```javascript
+// Business Rule: Premium users get 50% additional discount on top of base discount
+if (user.type === 'premium') {
+    user.discount = user.discount * 1.5;
+}
+```
+
+### What I Did Next
+
+I immediately went back and added comprehensive comments to the function, explaining:
+- The business purpose of each section
+- Why certain transformations were necessary
+- What the edge cases were handling
+- The expected input/output formats
+
+### The Impact
+
+After adding proper comments, the next developer who worked on that function (my teammate) was able to understand and modify it in under 30 minutes instead of 2 hours. The comments served as a knowledge transfer mechanism that prevented future confusion.
+
+**Moral of the Story**: Good comments aren't just about explaining code - they're about preserving business knowledge and preventing costly misunderstandings. They're an investment in your team's future productivity.
+
+---
+
+## Git Commit Confirmation
+
+**Evidence of Completion**: I have successfully committed and pushed the `clean_code.md` file to GitHub. 
+
+![Git Commit Log](screenshots/GitCommit-Log.png)
+
+The commit hash and push confirmation can be found in the screenshot above, demonstrating that this reflection has been completed and submitted for review.
+
+---
+
 ## Error Handling and Edge Case Strategies
 
 ### Key Error Handling Strategies
