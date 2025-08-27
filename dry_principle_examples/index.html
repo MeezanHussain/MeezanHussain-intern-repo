@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRY Principle Examples</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .code-section {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .before {
+            border-left: 4px solid #e74c3c;
+        }
+        .after {
+            border-left: 4px solid #27ae60;
+        }
+        .test-section {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .output {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 DRY Principle Examples</h1>
+        <p>This demonstrates the difference between code with duplication (messy) and refactored code following the DRY principle (clean).</p>
+        
+        <h2>📋 What is DRY?</h2>
+        <p><strong>DRY (Don't Repeat Yourself)</strong> is a software development principle that states: "Every piece of knowledge or logic must have a single, unambiguous representation within a system."</p>
+        
+        <div class="code-section before">
+            <h3>❌ BEFORE: Code with Duplication (Messy)</h3>
+            <p>This code has the same validation logic repeated 3 times:</p>
+            <ul>
+                <li>Same validation rules copied across functions</li>
+                <li>Maintenance nightmare - change a rule, update 3 places</li>
+                <li>Bug risk - fix in one place, forget others</li>
+                <li>Inconsistent behavior over time</li>
+            </ul>
+        </div>
+        
+        <div class="code-section after">
+            <h3>✅ AFTER: Refactored Code (Clean)</h3>
+            <p>This code follows the DRY principle:</p>
+            <ul>
+                <li>Single source of truth for validation rules</li>
+                <li>Easy updates - change once, updates everywhere</li>
+                <li>Consistent behavior across all functions</li>
+                <li>Better testing - test logic once, not multiple times</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>🧪 Test the Examples</h3>
+            <p>Click the buttons below to see the validation functions in action:</p>
+            
+            <button onclick="testBeforeCode()">Test BEFORE Code (Messy)</button>
+            <button onclick="testAfterCode()">Test AFTER Code (Clean)</button>
+            <button onclick="compareResults()">Compare Both Results</button>
+            
+            <div id="output" class="output">Click a button to see the test results...</div>
+        </div>
+        
+        <h2>🎯 Key Benefits of DRY</h2>
+        <ul>
+            <li><strong>Eliminates Duplication</strong> - No more copy-pasting the same logic</li>
+            <li><strong>Single Source of Truth</strong> - Changes only need to be made in one place</li>
+            <li><strong>Easier Maintenance</strong> - Fix a bug once, it's fixed everywhere</li>
+            <li><strong>Better Testing</strong> - Test logic once, not multiple times</li>
+            <li><strong>Consistent Behavior</strong> - All functions use the same underlying logic</li>
+        </ul>
+    </div>
+
+    <script src="before_dry.js"></script>
+    <script src="after_dry.js"></script>
+    <script src="run_examples.js"></script>
+</body>
+</html>
