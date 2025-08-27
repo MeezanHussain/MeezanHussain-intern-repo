@@ -64,7 +64,6 @@ I'm processing information or thinking through the technical details - I'll spea
 - Working in quiet environments
 - Using structured to-do lists
 - Breaking tasks into smaller, manageable pieces
-- Minimizing interruptions during deep work sessions
 
 ### **Things that distract me...**
 - Loud conversations nearby
