@@ -954,6 +954,11 @@ function calculateDiscount(total, rate) {
 **Robust Applications**: Applications handle edge cases gracefully instead of crashing unexpectedly.
 **Better User Experience**: Users get meaningful error messages instead of silent failures.
 
+**Evidence of Error-Handling Refactor**
+Screenshot from my actual repo commit showing improved guard clauses and error handling:
+
+![Error Handling Refactor](screenshots/ErrorHandling-Refactor.png)
+
 ---
 
 ## Unit Testing with Jest
