@@ -82,6 +82,8 @@ After installing and configuring these tools, I ran them on my codebase:
 - Professional appearance
 - Easier to spot actual logic issues
 
+**Evidence**: Screenshot available in `screenshots/ESLint-Proof.png` showing ESLint running and identifying formatting issues in my codebase.
+
 ---
 
 ## Function Refactoring: Single-Purpose Functions
