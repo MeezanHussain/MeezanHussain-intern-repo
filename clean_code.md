@@ -867,6 +867,29 @@ function calculateTotal(items) {
 
 ---
 
+## Git Commit Confirmation
+
+**Evidence of Completion**: I have successfully committed and pushed the `clean_code.md` file to GitHub. 
+
+![Git Commit Log](screenshots/GitCommit-Log.png)
+
+The commit hash and push confirmation can be found in the screenshot above, demonstrating that this reflection has been completed and submitted for review.
+
+**Additional Evidence**: I have also created and committed a comprehensive DRY principle examples folder to demonstrate the concepts discussed in this reflection.
+
+**Commit Hash**: `a578280` - "feat: add DRY principle examples with interactive demo"
+
+This commit includes:
+- `dry_principle_examples/before_dry.js` - Code with duplication (messy)
+- `dry_principle_examples/after_dry.js` - Refactored code following DRY principle (clean)
+- `dry_principle_examples/index.html` - Interactive HTML demo
+- `dry_principle_examples/run_examples.js` - JavaScript to test the examples
+- `dry_principle_examples/README.md` - Documentation and usage instructions
+
+The examples demonstrate the before/after code transformation discussed in the DRY principle section, providing hands-on evidence of the refactoring concepts covered in this reflection.
+
+---
+
 ## A Personal Story: The Comment That Saved My Day
 
 ### The Incident
@@ -919,16 +942,6 @@ I immediately went back and added comprehensive comments to the function, explai
 After adding proper comments, the next developer who worked on that function (my teammate) was able to understand and modify it in under 30 minutes instead of 2 hours. The comments served as a knowledge transfer mechanism that prevented future confusion.
 
 **Moral of the Story**: Good comments aren't just about explaining code - they're about preserving business knowledge and preventing costly misunderstandings. They're an investment in your team's future productivity.
-
----
-
-## Git Commit Confirmation
-
-**Evidence of Completion**: I have successfully committed and pushed the `clean_code.md` file to GitHub. 
-
-![Git Commit Log](screenshots/GitCommit-Log.png)
-
-The commit hash and push confirmation can be found in the screenshot above, demonstrating that this reflection has been completed and submitted for review.
 
 ---
 
