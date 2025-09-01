@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import HelloWorld from './HelloWorld'
+import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,22 +8,13 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex justify-center items-center space-x-8 mb-8">
-            <a href="https://vite.dev" target="_blank" className="transition-transform hover:scale-110">
-              <img src={viteLogo} className="h-16 w-16" alt="Vite logo" />
-            </a>
-            <a href="https://react.dev" target="_blank" className="transition-transform hover:scale-110">
-              <img src={reactLogo} className="h-16 w-16 animate-spin" alt="React logo" />
-            </a>
+
+        {/* HelloWorld Component Demo */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <HelloWorld name="Focus Bear" />
+            <HelloWorld name="React Developer" />
           </div>
-          <h1 className="text-5xl font-bold text-gray-800 dark:text-white mb-4">
-            Vite + React + Tailwind CSS
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
-            Modern development stack with beautiful styling
-          </p>
         </div>
 
         {/* Main Card */}
@@ -49,19 +40,19 @@ function App() {
               <div className="space-y-4 text-left">
                 <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border-l-4 border-green-500">
                   <p className="text-green-800 dark:text-green-200">
-                    <strong>✅ React:</strong> Component state management working perfectly
+                    <strong> React:</strong> Component state management working perfectly
                   </p>
                 </div>
                 
                 <div className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-500">
                   <p className="text-blue-800 dark:text-blue-200">
-                    <strong>✅ Tailwind CSS:</strong> Responsive design and dark mode support
+                    <strong> Tailwind CSS:</strong> Responsive design and dark mode support
                   </p>
                 </div>
                 
                 <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border-l-4 border-purple-500">
                   <p className="text-purple-800 dark:text-purple-200">
-                    <strong>✅ Vite:</strong> Fast development server with HMR
+                    <strong> Vite:</strong> Fast development server with HMR
                   </p>
                 </div>
               </div>
@@ -75,12 +66,6 @@ function App() {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="text-center mt-12">
-          <p className="text-gray-500 dark:text-gray-400">
-            Click on the Vite and React logos to learn more
-          </p>
-        </div>
       </div>
     </div>
   )
