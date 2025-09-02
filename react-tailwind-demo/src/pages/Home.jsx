@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import HelloWorld from '../HelloWorld';
 import Counter from '../Counter';
 import TodoList from '../TodoList';
+import UseEffectDemo from '../UseEffectDemo';
 
 function Home() {
   return (
@@ -78,6 +79,11 @@ function Home() {
           {/* TodoList Component Demo */}
           <div className="max-w-4xl mx-auto mb-16 animate-fade-in-up">
             <TodoList />
+          </div>
+
+          {/* UseEffectDemo Component Demo */}
+          <div className="max-w-4xl mx-auto mb-16 animate-fade-in-up">
+            <UseEffectDemo />
           </div>
 
           {/* Router Information */}
