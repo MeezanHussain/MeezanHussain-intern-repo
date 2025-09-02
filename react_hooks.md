@@ -343,6 +343,8 @@ The UseMemoDemo component demonstrates proper useMemo usage and serves as a prac
 Created a comprehensive `UseCallbackDemo.jsx` component that demonstrates useCallback optimization with child components, function prop passing, and re-render prevention.
 
 **Component Location**: `react-tailwind-demo/src/UseCallbackDemo.jsx`
+**Screenshot**: [Evidence](./screenshots/useCallback_Demo.png)
+
 
 ### Key Features Implemented
 - **Child Components**: Memoized child components that receive functions as props
@@ -350,24 +352,6 @@ Created a comprehensive `UseCallbackDemo.jsx` component that demonstrates useCal
 - **Dependency Management**: Examples of good and bad useCallback dependencies
 - **Console Logging**: Render tracking and function call logging
 - **React DevTools Integration**: Instructions for using Profiler to measure re-renders
-
-### useCallback Implementation
-```jsx
-// Function WITHOUT useCallback - creates new function on every render
-const handleClickWithoutCallback = () => {
-  setCount(prev => prev + 1);
-};
-
-// Function WITH useCallback - memoized function reference
-const handleClickWithCallback = useCallback(() => {
-  setCount(prev => prev + 1);
-}, []); // Empty dependency array - function never changes
-
-// Function with dependencies in useCallback
-const handleClickWithDependencies = useCallback(() => {
-  setCount(prev => prev + otherState + 1);
-}, [otherState]); // Function changes when otherState changes
-```
 
 ## What Problem Does useCallback Solve?
 
@@ -494,15 +478,5 @@ const handleClick = () => {
 **2. Stable Dependencies**
 - Ensure dependencies don't change on every render
 - Use primitive values or memoized objects as dependencies
-
-**3. Appropriate Use Cases**
-- Functions passed to child components
-- Functions used in dependency arrays of other hooks
-- Event handlers in performance-critical components
-
-**4. Don't Overuse**
-- Only use when there's a clear performance benefit
-- Profile first to identify actual bottlenecks
-- Simple functions don't need memoization
 
 The UseCallbackDemo component demonstrates proper useCallback usage and serves as a practical example of preventing unnecessary re-renders in React applications.
