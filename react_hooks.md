@@ -6,6 +6,7 @@
 Created a comprehensive `UseEffectDemo.jsx` component that demonstrates various use cases of the useEffect hook including mount/unmount logging, API data fetching, dependency arrays, and cleanup functions.
 
 **Component Location**: `react-tailwind-demo/src/UseEffectDemo.jsx`
+**Screenshot**: [Evidence](./screenshots/useEffect_Demo.png)
 
 ### Key Features Implemented
 - **Mount/Unmount Logging**: Console logs when component mounts and unmounts
