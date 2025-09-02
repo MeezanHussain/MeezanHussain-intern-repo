@@ -334,3 +334,175 @@ const processedData = useMemo(() =>
 - Balance between optimization and code complexity
 
 The UseMemoDemo component demonstrates proper useMemo usage and serves as a practical example of performance optimization in React applications.
+
+---
+
+## Preventing Unnecessary Renders with useCallback
+
+### What We Built
+Created a comprehensive `UseCallbackDemo.jsx` component that demonstrates useCallback optimization with child components, function prop passing, and re-render prevention.
+
+**Component Location**: `react-tailwind-demo/src/UseCallbackDemo.jsx`
+
+### Key Features Implemented
+- **Child Components**: Memoized child components that receive functions as props
+- **Function Comparison**: Side-by-side comparison with and without useCallback
+- **Dependency Management**: Examples of good and bad useCallback dependencies
+- **Console Logging**: Render tracking and function call logging
+- **React DevTools Integration**: Instructions for using Profiler to measure re-renders
+
+### useCallback Implementation
+```jsx
+// Function WITHOUT useCallback - creates new function on every render
+const handleClickWithoutCallback = () => {
+  setCount(prev => prev + 1);
+};
+
+// Function WITH useCallback - memoized function reference
+const handleClickWithCallback = useCallback(() => {
+  setCount(prev => prev + 1);
+}, []); // Empty dependency array - function never changes
+
+// Function with dependencies in useCallback
+const handleClickWithDependencies = useCallback(() => {
+  setCount(prev => prev + otherState + 1);
+}, [otherState]); // Function changes when otherState changes
+```
+
+## What Problem Does useCallback Solve?
+
+**1. Unnecessary Child Re-renders**
+- **Problem**: New function created on every parent render causes child components to re-render
+- **Solution**: useCallback provides stable function reference
+- **Impact**: Prevents cascade of re-renders in component tree
+
+**2. Function Reference Instability**
+- **Problem**: Functions passed as props change reference on every render
+- **Solution**: useCallback memoizes function reference
+- **Impact**: Child components with React.memo() won't re-render unnecessarily
+
+**3. Performance in Large Component Trees**
+- **Problem**: Expensive child components re-render when parent updates
+- **Solution**: Stable function references prevent unnecessary re-renders
+- **Impact**: Significant performance improvement in complex applications
+
+**4. Dependency Array Issues**
+- **Problem**: Functions recreated when dependencies change unexpectedly
+- **Solution**: useCallback with proper dependencies controls when function updates
+- **Impact**: Predictable behavior and better performance
+
+## How Does useCallback Work Differently from useMemo?
+
+**useCallback:**
+- **Purpose**: Memoizes function references
+- **Returns**: The same function reference if dependencies haven't changed
+- **Use Case**: Preventing child component re-renders
+- **Example**: `const fn = useCallback(() => {}, [dep])`
+
+**useMemo:**
+- **Purpose**: Memoizes computed values
+- **Returns**: The same computed value if dependencies haven't changed
+- **Use Case**: Preventing expensive calculations
+- **Example**: `const value = useMemo(() => expensiveCalc(), [dep])`
+
+**Key Differences:**
+```jsx
+// useCallback - memoizes the function itself
+const handleClick = useCallback(() => {
+  doSomething();
+}, [dependency]);
+
+// useMemo - memoizes the result of calling the function
+const result = useMemo(() => {
+  return expensiveCalculation();
+}, [dependency]);
+```
+
+**When to Use Each:**
+- **useCallback**: When passing functions to child components
+- **useMemo**: When computing expensive values or creating objects/arrays
+
+## When Would useCallback Not Be Useful?
+
+**1. Functions Not Passed as Props**
+```jsx
+// ❌ Unnecessary - function not passed to children
+const handleClick = useCallback(() => {
+  setCount(prev => prev + 1);
+}, []);
+
+// ✅ Better - direct function
+const handleClick = () => {
+  setCount(prev => prev + 1);
+};
+```
+
+**2. Child Components Not Memoized**
+```jsx
+// ❌ Unnecessary - child component not wrapped in React.memo()
+const Child = ({ onClick }) => <button onClick={onClick}>Click</button>;
+
+// ✅ Useful - child component is memoized
+const Child = memo(({ onClick }) => <button onClick={onClick}>Click</button>);
+```
+
+**3. Dependencies Change Frequently**
+```jsx
+// ❌ Bad - function changes on every render
+const handleClick = useCallback(() => {
+  doSomething();
+}, [Math.random()]); // Dependency changes every render
+
+// ✅ Better - stable dependencies
+const handleClick = useCallback(() => {
+  doSomething();
+}, [stableValue]);
+```
+
+**4. Simple Event Handlers**
+```jsx
+// ❌ Unnecessary - simple handlers don't need memoization
+const handleClick = useCallback(() => {
+  console.log('clicked');
+}, []);
+
+// ✅ Better - direct function for simple cases
+const handleClick = () => {
+  console.log('clicked');
+};
+```
+
+**5. Functions with No Dependencies**
+```jsx
+// ❌ Unnecessary - function never changes anyway
+const handleClick = useCallback(() => {
+  setCount(prev => prev + 1);
+}, []);
+
+// ✅ Better - direct function
+const handleClick = () => {
+  setCount(prev => prev + 1);
+};
+```
+
+## Best Practices for useCallback
+
+**1. Use with React.memo()**
+- useCallback is most effective when child components are memoized
+- Without memoization, children will re-render regardless of function stability
+
+**2. Stable Dependencies**
+- Ensure dependencies don't change on every render
+- Use primitive values or memoized objects as dependencies
+
+**3. Appropriate Use Cases**
+- Functions passed to child components
+- Functions used in dependency arrays of other hooks
+- Event handlers in performance-critical components
+
+**4. Don't Overuse**
+- Only use when there's a clear performance benefit
+- Profile first to identify actual bottlenecks
+- Simple functions don't need memoization
+
+The UseCallbackDemo component demonstrates proper useCallback usage and serves as a practical example of preventing unnecessary re-renders in React applications.

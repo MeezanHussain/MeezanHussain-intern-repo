@@ -5,6 +5,7 @@ import Counter from '../Counter';
 import TodoList from '../TodoList';
 import UseEffectDemo from '../UseEffectDemo';
 import UseMemoDemo from '../UseMemoDemo';
+import UseCallbackDemo from '../UseCallbackDemo';
 
 function Home() {
   return (
@@ -90,6 +91,11 @@ function Home() {
           {/* UseMemoDemo Component Demo */}
           <div className="max-w-4xl mx-auto mb-16 animate-fade-in-up">
             <UseMemoDemo />
+          </div>
+
+          {/* UseCallbackDemo Component Demo */}
+          <div className="max-w-4xl mx-auto mb-16 animate-fade-in-up">
+            <UseCallbackDemo />
           </div>
 
           {/* Router Information */}
