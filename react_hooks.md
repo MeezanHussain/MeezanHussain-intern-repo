@@ -244,34 +244,13 @@ The UseEffectDemo component demonstrates proper useEffect patterns and serves as
 Created a comprehensive `UseMemoDemo.jsx` component that demonstrates useMemo optimization with expensive calculations, large number lists, and performance comparisons.
 
 **Component Location**: `react-tailwind-demo/src/UseMemoDemo.jsx`
+**Screenshot**: [Evidence](./screenshots/useMemo_Demo.png)
 
 ### Key Features Implemented
 - **Expensive Calculation**: Mathematical computation that runs 1,000,000 iterations
 - **Performance Comparison**: Side-by-side comparison with and without useMemo
 - **Large Number List**: 10,000 numbers with prime number calculations
 - **Filtered Results**: Dynamic filtering with memoized calculations
-- **Console Logging**: Performance timing and operation tracking
-
-### useMemo Implementation
-```jsx
-// Expensive calculation WITH useMemo
-const expensiveCalculationWithMemo = useMemo(() => {
-  console.log('🚀 Expensive calculation WITH useMemo running...');
-  let result = 0;
-  for (let i = 0; i < 1000000; i++) {
-    result += Math.sqrt(i) * Math.sin(i);
-  }
-  return result;
-}, [renderCount]); // Only recalculates when renderCount changes
-
-// Filtered numbers with useMemo
-const filteredNumbers = useMemo(() => {
-  console.log('🔍 Filtering numbers...');
-  if (filter === 'all') return numbers;
-  if (filter === 'prime') return numbers.filter(num => num.isPrime);
-  return numbers;
-}, [numbers, filter]); // Only recalculates when numbers or filter changes
-```
 
 ## How Does useMemo Improve Performance?
 
@@ -290,50 +269,12 @@ const filteredNumbers = useMemo(() => {
 - **Solution**: useMemo creates stable references
 - **Impact**: Prevents cascade of re-renders in component tree
 
-**4. Memory vs CPU Trade-off**
-- **Benefit**: Saves CPU cycles by avoiding repeated calculations
-- **Cost**: Uses memory to store cached results
-- **Optimal**: When calculation cost > memory cost
 
 ## When Should You Avoid Using useMemo?
 
 **1. Simple Calculations**
-```jsx
-// ❌ Unnecessary - simple operations are fast
-const doubled = useMemo(() => count * 2, [count]);
-
-// ✅ Better - direct calculation
-const doubled = count * 2;
-```
-
 **2. Dependencies Change Frequently**
-```jsx
-// ❌ Bad - dependencies change on every render
-const result = useMemo(() => {
-  return expensiveCalculation();
-}, [new Date()]); // New date object every render
-
-// ✅ Better - stable dependencies
-const result = useMemo(() => {
-  return expensiveCalculation();
-}, [stableValue]);
-```
-
-**3. Small Data Sets**
-```jsx
-// ❌ Unnecessary - small arrays are fast to process
-const filtered = useMemo(() => 
-  items.filter(item => item.active), [items]
-);
-
-// ✅ Better - direct filtering for small arrays
-const filtered = items.filter(item => item.active);
-```
-
-**4. Over-optimization**
-- **Problem**: Adding useMemo everywhere without measuring performance
-- **Solution**: Profile first, optimize only where needed
-- **Impact**: Code complexity without performance benefit
+**3. Over-optimization**
 
 ## What Happens If You Remove useMemo from Your Implementation?
 
