@@ -1,0 +1,20 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "codebase",
+    "refactoring",
+    "maintainability",
+    "readability",
+    "debugging",
+    "cyclomatic",
+    "DRY",
+    "VIP",
+    "MeezanHussain",
+    "Testsprite",
+    "cspell",
+    "markdownlint"
+  ],
+  "ignoreWords": [],
+  "import": []
+}
