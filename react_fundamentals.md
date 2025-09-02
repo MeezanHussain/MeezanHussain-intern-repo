@@ -372,3 +372,52 @@ The navigation system is integrated directly into each page component:
 - Use Suspense for loading fallbacks
 
 The React Router implementation demonstrates how client-side routing transforms a single-page application into a multi-page experience while maintaining the performance and user experience benefits of modern web applications.
+
+---
+
+## Working with Lists & User Input
+
+### What We Built
+Created a comprehensive `TodoList.jsx` component that demonstrates dynamic list handling in React. The component includes a form with input field and button, dynamic list rendering using `.map()`, and interactive features like completion toggling and deletion.
+
+**Component Location**: `react-tailwind-demo/src/TodoList.jsx`
+**Screenshot**: [Evidence](./screenshots/To_Do_List_code.png)
+**Screenshot**: [Evidence](./screenshots/TodoList_frontend.png)
+
+### Key Features Implemented
+- **Form Input**: Text input with controlled component pattern using `useState`
+- **Dynamic List**: Array of todos managed with state and rendered using `.map()`
+- **User Interactions**: Add, toggle completion, delete, and clear completed todos
+- **Real-time Updates**: Immediate UI updates when state changes
+- **Responsive Design**: Mobile-friendly layout with Tailwind CSS
+
+
+### What Are Some Common Issues When Working with Lists in React?
+
+**1. Missing or Duplicate Keys**
+- **Problem**: Not providing unique `key` props or using array index as key
+- **Impact**: React can't efficiently update the DOM, causing performance issues and bugs
+- **Solution**: Use unique, stable identifiers (like `id`) for each list item
+
+**2. Direct State Mutation**
+- **Problem**: Modifying arrays directly with methods like `push()` or `splice()`
+- **Impact**: React won't detect changes, components won't re-render
+- **Solution**: Use immutable update patterns with spread operator or `map()`
+
+**3. Inefficient Re-renders**
+- **Problem**: Creating new objects/functions inside render method
+- **Impact**: All list items re-render unnecessarily, poor performance
+- **Solution**: Use `useCallback` for event handlers, `useMemo` for expensive calculations
+
+**4. State Update Race Conditions**
+- **Problem**: Multiple rapid state updates can cause inconsistent state
+- **Impact**: UI shows incorrect data, especially with async operations
+- **Solution**: Use functional state updates: `setTodos(prev => [...prev, newTodo])`
+
+**5. Memory Leaks with Event Listeners**
+- **Problem**: Not cleaning up event listeners in list items
+- **Impact**: Memory leaks, especially with dynamic lists
+- **Solution**: Use `useEffect` cleanup functions or avoid inline event handlers
+
+
+The TodoList component demonstrates proper list management patterns and serves as a practical example of handling dynamic data in React applications.
