@@ -10,11 +10,33 @@ Respectful communication means keeping tone polite and inclusive, even in short 
 
 ### Giving and Receiving Feedback
 
-When giving feedback, I’ll focus on the work, use specific examples, and suggest improvements. When receiving feedback, I’ll assume good intent, ask clarifying questions if needed, and avoid being defensive. This approach helps maintain trust and ensures feedback becomes a learning opportunity.
+When giving feedback, I'll focus on the work, use specific examples, and suggest improvements. When receiving feedback, I'll assume good intent, ask clarifying questions if needed, and avoid being defensive. This approach helps maintain trust and ensures feedback becomes a learning opportunity.
+
+**Personal Experience - Feedback in Action:**
+
+During the water leak incident I mentioned earlier, I experienced both giving and receiving feedback in a high-pressure situation. When I first noticed the leak spreading, I had to give feedback to the building manager about the urgency of the situation. I was specific about which floors were affected, the rate of water spread, and which residents needed immediate assistance. This clear, factual feedback helped them make quick decisions about resource allocation.
+
+Later, when the director personally thanked me for my work, they gave me constructive feedback about my crisis management skills. They specifically praised my proactive communication and coordination efforts, but also suggested that in future emergencies, I should consider documenting the timeline of events for insurance purposes. I received this feedback positively, asked clarifying questions about the documentation process, and implemented their suggestion in subsequent emergency procedures.
+
+This experience reinforced that effective feedback is about focusing on actions and outcomes, not personalities, and that receiving feedback with an open mind leads to continuous improvement.
 
 ### Experiences with Great Teamwork
 
-I’ve experienced teamwork that worked well when everyone was proactive, shared updates, and respected different perspectives. What made it effective was clarity of communication, accountability, and a supportive environment where people felt safe to ask questions.
+I've experienced teamwork that worked well when everyone was proactive, shared updates, and respected different perspectives. What made it effective was clarity of communication, accountability, and a supportive environment where people felt safe to ask questions.
+
+**Personal Experience - Water Leak Emergency Response:**
+
+During my time working as a concierge in customer service, I experienced a critical situation that truly tested our teamwork and professionalism. One evening, there was a significant water leak from the plant room that began spreading to apartments on the floors below. As the situation escalated, I immediately recognized the urgency and sprang into action.
+
+I demonstrated great teamwork by:
+- **Immediate Communication**: I quickly contacted the building manager and operations manager to alert them of the emergency
+- **Coordinated Response**: I worked closely with the cleaning staff to help contain the water damage and protect residents' belongings
+- **Direct Resident Support**: I personally went door-to-door to inform affected apartment residents about the situation and help them move valuables to safety
+- **Multi-tasking Under Pressure**: I was constantly moving between floors, coordinating with different team members, and ensuring everyone had the information they needed
+
+What made this teamwork effective was our clear communication channels, everyone taking ownership of their role, and the mutual respect we had for each other's expertise. The building manager trusted me to handle resident communication while they focused on the technical aspects, and the cleaning staff trusted my assessment of which areas needed immediate attention.
+
+The director of the company later personally appreciated my work during this crisis, recognizing how my proactive approach and effective coordination helped minimize damage and maintain resident safety. This experience taught me that great teamwork isn't just about following procedures—it's about taking initiative, communicating clearly under pressure, and supporting each other when it matters most.
 
 ### Steps for Clear, Respectful, and Inclusive Communication
 
