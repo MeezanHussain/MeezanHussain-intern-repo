@@ -3,6 +3,9 @@
 ## Overview
 This document details the debugging process for recreating and fixing one of the buggy React code examples from the CSS-Tricks article "Three Buggy React Code Examples And How To Fix Them".
 
+**Component Location**: `debugging_practice_example`
+**Screenshot**: [Evidence](./screenshots/React_debugging_practice.png)
+
 ## The Issue
 
 ### What Was the Problem?
