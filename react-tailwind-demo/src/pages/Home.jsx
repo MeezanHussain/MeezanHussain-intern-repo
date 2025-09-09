@@ -47,6 +47,13 @@ function Home() {
               <span>👤</span>
               <span>Profile</span>
             </Link>
+            <Link 
+              to="/axios-demo" 
+              className="btn-professional-secondary inline-flex items-center space-x-2 text-lg font-semibold"
+            >
+              <span>🌐</span>
+              <span>Axios Demo</span>
+            </Link>
           </div>
         </div>
 
