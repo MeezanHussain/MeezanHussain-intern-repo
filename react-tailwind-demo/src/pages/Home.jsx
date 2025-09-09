@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HelloWorld from '../HelloWorld';
 import Counter from '../Counter';
+import CounterDisplay from '../CounterDisplay';
 import TodoList from '../TodoList';
 import UseEffectDemo from '../UseEffectDemo';
 import UseMemoDemo from '../UseMemoDemo';
@@ -97,6 +98,11 @@ function Home() {
           {/* Counter Component Demo */}
           <div className="max-w-4xl mx-auto mb-16 animate-scale-in">
             <Counter />
+          </div>
+
+          {/* Counter Display Component Demo - Shows Redux state sharing */}
+          <div className="max-w-4xl mx-auto mb-16 animate-fade-in-up">
+            <CounterDisplay />
           </div>
 
           {/* TodoList Component Demo */}

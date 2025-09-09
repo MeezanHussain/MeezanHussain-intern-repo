@@ -22,4 +22,24 @@ const counterSlice = createSlice({
 });
 
 export const { increment, decrement, incrementByAmount, reset } = counterSlice.actions;
+
+// Selector functions
+export const selectCounter = (state) => state.counter.value;
+export const selectCounterStatus = (state) => {
+  const value = state.counter.value;
+  if (value === 0) return 'zero';
+  if (value > 0 && value <= 5) return 'low';
+  if (value > 5 && value <= 10) return 'medium';
+  if (value > 10) return 'high';
+  return 'negative';
+};
+export const selectCounterMessage = (state) => {
+  const value = state.counter.value;
+  if (value === 0) return 'Start counting!';
+  if (value > 0 && value <= 5) return 'Just getting started';
+  if (value > 5 && value <= 10) return 'Making progress';
+  if (value > 10) return 'Great job!';
+  return 'Going backwards';
+};
+
 export default counterSlice.reducer;

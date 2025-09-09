@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementByAmount, reset } from './store/counterSlice';
+import { increment, decrement, incrementByAmount, reset, selectCounter, selectCounterStatus, selectCounterMessage } from './store/counterSlice';
 import Button from './Button';
 
 function Counter() {
-  // useSelector hook to get count from Redux store
-  const count = useSelector((state) => state.counter.value);
+  // useSelector hooks with selector functions
+  const count = useSelector(selectCounter);
+  const status = useSelector(selectCounterStatus);
+  const message = useSelector(selectCounterMessage);
   
   // useDispatch hook to dispatch actions
   const dispatch = useDispatch();
@@ -43,19 +45,59 @@ function Counter() {
         {/* Display count value dynamically */}
         <div className="mb-12">
           <div className="relative">
-            {/* Main count display */}
-            <div className="text-8xl font-black text-gradient-blue mb-6 animate-gentle-float">
+            {/* Main count display with dynamic styling based on status */}
+            <div className={`text-8xl font-black mb-6 animate-gentle-float ${
+              status === 'zero' ? 'text-gray-400' :
+              status === 'low' ? 'text-gradient-blue' :
+              status === 'medium' ? 'text-gradient-purple' :
+              status === 'high' ? 'text-gradient-green' :
+              'text-red-500'
+            }`}>
               {count}
             </div>
             
-            {/* Success indicator */}
-            <div className="absolute -top-4 -right-4 w-10 h-10 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-              <span className="text-white text-sm font-bold">✓</span>
+            {/* Status indicator with dynamic color */}
+            <div className={`absolute -top-4 -right-4 w-10 h-10 rounded-full flex items-center justify-center shadow-lg animate-pulse ${
+              status === 'zero' ? 'bg-gray-400' :
+              status === 'low' ? 'bg-gradient-to-r from-blue-400 to-blue-500' :
+              status === 'medium' ? 'bg-gradient-to-r from-purple-400 to-purple-500' :
+              status === 'high' ? 'bg-gradient-to-r from-green-400 to-emerald-500' :
+              'bg-gradient-to-r from-red-400 to-red-500'
+            }`}>
+              <span className="text-white text-sm font-bold">
+                {status === 'zero' ? '0' :
+                 status === 'low' ? '↗' :
+                 status === 'medium' ? '⚡' :
+                 status === 'high' ? '🚀' :
+                 '↙'}
+              </span>
             </div>
           </div>
-          <p className="text-gray-600 text-xl font-medium">
-            Current count value
-          </p>
+          
+          {/* Dynamic message based on counter value */}
+          <div className="space-y-2">
+            <p className="text-gray-600 text-xl font-medium">
+              Current count value
+            </p>
+            <p className={`text-lg font-semibold ${
+              status === 'zero' ? 'text-gray-500' :
+              status === 'low' ? 'text-blue-600' :
+              status === 'medium' ? 'text-purple-600' :
+              status === 'high' ? 'text-green-600' :
+              'text-red-600'
+            }`}>
+              {message}
+            </p>
+            <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+              status === 'zero' ? 'bg-gray-100 text-gray-600' :
+              status === 'low' ? 'bg-blue-100 text-blue-700' :
+              status === 'medium' ? 'bg-purple-100 text-purple-700' :
+              status === 'high' ? 'bg-green-100 text-green-700' :
+              'bg-red-100 text-red-700'
+            }`}>
+              Status: {status.charAt(0).toUpperCase() + status.slice(1)}
+            </div>
+          </div>
         </div>
 
         {/* Button Grid */}
