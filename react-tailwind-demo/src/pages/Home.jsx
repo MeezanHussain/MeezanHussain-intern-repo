@@ -61,6 +61,13 @@ function Home() {
               <span>🌍</span>
               <span>i18n Demo</span>
             </Link>
+            <Link 
+              to="/formik-demo" 
+              className="btn-professional-secondary inline-flex items-center space-x-2 text-lg font-semibold"
+            >
+              <span>📝</span>
+              <span>Formik Demo</span>
+            </Link>
           </div>
         </div>
 
