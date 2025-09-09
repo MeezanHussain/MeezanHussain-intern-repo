@@ -6,6 +6,7 @@ const AxiosDemo = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [token, setToken] = useState('');
+  const [currentToken, setCurrentToken] = useState(localStorage.getItem('authToken') || '');
 
   const handleTestRequest = async () => {
     setLoading(true);
@@ -24,12 +25,14 @@ const AxiosDemo = () => {
 
   const handleSetToken = () => {
     setAuthToken(token);
+    setCurrentToken(token);
     alert('Token saved to localStorage!');
   };
 
   const handleClearToken = () => {
     setAuthToken(null);
     setToken('');
+    setCurrentToken('');
     alert('Token removed from localStorage!');
   };
 
@@ -77,7 +80,7 @@ const AxiosDemo = () => {
           </button>
         </div>
         <p className="text-sm text-gray-600">
-          Current token: {localStorage.getItem('authToken') || 'None'}
+          Current token: {currentToken || 'None'}
         </p>
       </div>
 

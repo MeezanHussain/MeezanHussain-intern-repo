@@ -135,7 +135,7 @@ export const setAuthToken = (token) => {
 // Utility function to make authenticated requests
 export const makeAuthenticatedRequest = async (method, url, data = null) => {
   try {
-    const { signal, cancel } = createCancelToken();
+    const { signal } = createCancelToken();
     
     const config = {
       method,
