@@ -54,6 +54,13 @@ function Home() {
               <span>🌐</span>
               <span>Axios Demo</span>
             </Link>
+            <Link 
+              to="/i18n-demo" 
+              className="btn-professional-secondary inline-flex items-center space-x-2 text-lg font-semibold"
+            >
+              <span>🌍</span>
+              <span>i18n Demo</span>
+            </Link>
           </div>
         </div>
 

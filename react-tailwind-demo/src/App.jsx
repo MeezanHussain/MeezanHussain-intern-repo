@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import AxiosDemo from './AxiosDemo';
+import I18nDemo from './I18nDemo';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/axios-demo" element={<AxiosDemo />} />
+          <Route path="/i18n-demo" element={<I18nDemo />} />
         </Routes>
       </div>
     </Router>
