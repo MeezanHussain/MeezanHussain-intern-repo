@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement, incrementByAmount, reset } from './store/counterSlice';
 import Button from './Button';
 
 function Counter() {
-  // useState hook to manage count state
-  const [count, setCount] = useState(0);
+  // useSelector hook to get count from Redux store
+  const count = useSelector((state) => state.counter.value);
+  
+  // useDispatch hook to dispatch actions
+  const dispatch = useDispatch();
 
   // Function to increment count
   const incrementCount = () => {
-    setCount(count + 1);
+    dispatch(increment());
   };
 
   // Function to decrement count
   const decrementCount = () => {
-    setCount(count - 1);
+    dispatch(decrement());
   };
 
   // Function to reset count
   const resetCount = () => {
-    setCount(0);
+    dispatch(reset());
   };
 
   // Function to double count
   const doubleCount = () => {
-    setCount(count * 2);
+    dispatch(incrementByAmount(count));
   };
 
   return (
@@ -98,7 +103,7 @@ function Counter() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="p-4 bg-blue-50 rounded-xl border-l-4 border-blue-400">
             <p className="text-blue-700 text-sm font-medium">
-              <strong>useState Hook:</strong> State management
+              <strong>Redux Toolkit:</strong> Global state management
             </p>
           </div>
           
