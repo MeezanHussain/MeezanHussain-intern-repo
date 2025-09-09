@@ -100,7 +100,7 @@ Imagine leaving your computer unlocked at a coffee shop - a stranger could acces
 - **Suspicious Email Awareness**: I'm cautious about unknown senders
 
 **Areas for Improvement:**
-- **Password Manager**: I'm still memorizing passwords instead of using a manager
+- **Password Manager**: ~~I'm still memorizing passwords instead of using a manager~~ ✅ **COMPLETED**: Now using Proton Pass for secure password management
 - **Auto-Lock Settings**: My devices could lock faster when I'm away
 - **Security Education**: I could learn more about recognizing advanced threats
 
@@ -123,6 +123,9 @@ Security should become like brushing teeth - something I do without thinking. It
 - **2FA Setup**: Enable two-factor authentication on company systems first
 - **Password Manager**: Research and set up a password manager this week
 - **Account Review**: Check for any accounts I've forgotten about
+
+**2FA Implementation Evidence:**
+I've successfully enabled 2FA on my WhatsApp account as a starting point for securing my communication channels. See screenshot: `screenshots/2FA-Whatsapp.jpeg`
 
 **Ongoing Maintenance:**
 - **Regular Updates**: Change passwords every 3-6 months
@@ -167,14 +170,18 @@ Security should become like brushing teeth - something I do without thinking. It
 - **1Password**: Popular choice with good security features
 - **Bitwarden**: Open-source option with free tier
 - **LastPass**: Well-established but check recent security history
+- **Proton Pass**: Privacy-focused option with strong encryption
 - **Company Policy**: Verify if Focus Bear has preferred password managers
 
+**My Choice: Proton Pass**
+I've chosen Proton Pass as my password manager because of its strong focus on privacy and security. Proton is known for their commitment to user privacy and end-to-end encryption.
+
 **Implementation Steps:**
-- **Choose Tool**: Select password manager based on features and company policy
-- **Install Software**: Download and install on all my devices
-- **Import Passwords**: Securely transfer existing passwords
-- **Generate New Passwords**: Create strong passwords for all accounts
-- **Test Access**: Ensure I can access accounts with new passwords
+- **Choose Tool**: Selected Proton Pass based on privacy features and security reputation
+- **Install Software**: Downloaded and installed Proton Pass on all my devices
+- **Import Passwords**: Securely transferred existing passwords from browser storage
+- **Generate New Passwords**: Using Proton Pass to create strong passwords for all accounts
+- **Test Access**: Verified I can access accounts with new passwords and auto-fill works
 
 ### Set up your computer and phone to automatically lock (require a password or biometric login) if you are away for more than a few minutes
 
@@ -183,6 +190,11 @@ Security should become like brushing teeth - something I do without thinking. It
 - **Phone Settings**: Enable auto-lock after 1-2 minutes
 - **Biometric Setup**: Configure fingerprint or face recognition
 - **Test Functionality**: Walk away and verify devices lock automatically
+
+**My Auto-Lock Settings:**
+- **Phone**: Configured auto-lock after 2 minutes of inactivity with biometric authentication
+- **Computer**: Set Windows auto-lock after 3 minutes with password requirement
+- **Testing**: Verified both devices lock automatically and require authentication to unlock
 
 ### Document one new cyber security habit you will follow at Focus Bear
 
