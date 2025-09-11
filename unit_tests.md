@@ -37,3 +37,21 @@
 
 ### Challenge when simulating interaction
 - Using the right query. I switched from matching button text to an accessible name (via `aria-label`) and then asserted the text change. Also ensured `jsdom` environment and `@testing-library/jest-dom` were set up.
+
+---
+
+## Mocking API Calls in Jest
+
+- Component: `learning-jest/FetchUser.jsx`
+- Tests: `learning-jest/FetchUser.test.jsx`
+- Approach: Mocked `globalThis.fetch` with `jest.fn()` to control responses and test loading/success/error states.
+
+### Why mock API calls?
+- Keeps tests fast and deterministic (no real network).
+- Allows testing edge cases (errors, timeouts, specific payloads) reliably.
+- Decouples component behavior from external services.
+
+### Common pitfalls with async tests
+- Not awaiting async UI updates; prefer `await waitFor(...)` or `findBy...` queries.
+- Forgetting to reset mocks between tests (`jest.restoreAllMocks()` / reassigning globals).
+- Over-mocking implementation details; focus assertions on user-visible behavior (text, roles, aria states).
