@@ -20,3 +20,20 @@
 ## Notes
 - Jest script already in `learning-jest/package.json` ("test": "jest").
 - Keep tests small, deterministic, and focused on a single behavior.
+
+---
+
+## Testing React Components with React Testing Library
+
+- Component: `learning-jest/Hello.jsx`
+- Tests: `learning-jest/Hello.test.jsx`
+- Config: `learning-jest/jest.config.js`, `learning-jest/jest.setup.js`
+- Commit: `7ce6aff` — learning-jest: add React Testing Library setup and tests (Hello component)
+- Screenshots: `screenshots/Learning-Jest_1.png`, `screenshots/Learning-Jest_2.png`
+
+### Why use React Testing Library?
+- Tests behavior from the user’s perspective (accessible roles/names), not implementation details.
+- More resilient to refactors: changing internals doesn’t break tests if the UI behavior stays the same.
+
+### Challenge when simulating interaction
+- Using the right query. I switched from matching button text to an accessible name (via `aria-label`) and then asserted the text change. Also ensured `jsdom` environment and `@testing-library/jest-dom` were set up.
